@@ -1,0 +1,141 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #d7e1ec, #f0f4f8);
+  color: #333;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.header {
+  background-color: #003a8c;
+  color: white;
+  padding: 20px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+
+.inputMobil {
+  background-color: #003a8c;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.inputMobil input[type="text"],
+.inputMobil input[type="number"],
+.inputMobil input[type="file"] {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: border-color 0.2s ease;
+}
+
+
+
+
+.inputMobil label {
+  font-weight: 500;
+  margin-top: 10px;
+  color: #ffffff;
+}
+.inputMobil input[type="file"] {
+  color: #ffffff;  
+}
+
+.inputMobil button[type="submit"] {
+  background-color: #f1f2f3;
+  color: rgb(24, 23, 23);
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.inputMobil button[type="submit"]:hover {
+  background-color: #0b6bd3;
+}
+
+
+#total-biaya {
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #111111;
+}
+
+
+button[type="button"] {
+  margin-top: 10px;
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="button"]:hover {
+  background-color: #218838;
+}
+
+@media (max-width: 600px) {
+  .inputMobil, .header {
+    padding: 20px;
+  }
+
+  .inputMobil button[type="submit"],
+  button[type="button"] {
+    width: 100%;
+  }
+}
+.ketentuan {
+  padding: 20px;
+  background: url(images/src/vintagecar.jpg);
+  background-size: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.ketentuan h2 {
+  margin-bottom: 15px;
+  text-align: center;
+  color: #f7f3f3;
+}
+
+.ketentuan ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  border-radius: 8px;
+  padding: 20px;
+  color: #f7f7f7;  /* teks tetap hitam */
+}

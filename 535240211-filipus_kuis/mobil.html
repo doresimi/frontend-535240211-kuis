@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="mobil.css">
+  <title>Form Asuransi Mobil</title>
+</head>
+<body>
+  <div class="header">
+    <h1>Form Data Mobil</h1>
+  </div>
+  <div class="ketentuan">
+    <h2>Ketentuan Harga Premi per Tahun</h2>
+    <ul>
+      <li>Mobil berusia <strong>0- 3 tahun</strong>: Premi = 2.5% dari harga mobil.</li>
+      <li>Mobil berusia <strong>3-5 tahun</strong> dan harga <strong>di bawah 200 juta</strong>: Premi = 4% dari harga mobil.</li>
+      <li>Mobil berusia <strong>3-5 tahun</strong> dan harga <strong>200 juta ke atas</strong>: Premi = 3% dari harga mobil.</li>
+      <li>Mobil berusia <strong>di atas 5 tahun</strong>: Premi = 5% dari harga mobil.</li>
+    </ul>
+  </div>
+
+  
+  <form id="Data-Mobil" class="inputMobil">
+    <input type="text" id="merk" placeholder="Merk Mobil" required><br>
+    <input type="text" id="jenis" placeholder="Jenis Mobil" required><br>
+    <input type="number" id="tahun" placeholder="Tahun Pembuatan" required><br>
+    <input type="number" id="harga" placeholder="Harga Mobil" required><br>
+    <input type="text" id="plat" placeholder="Nomor Plat Mobil" required><br>
+    <input type="text" id="mesin" placeholder="Nomor Mesin" required><br>
+    <input type="text" id="rangka" placeholder="Nomor Rangka" required><br>
+    <input type="text" id="pemilik" placeholder="Nama Pemilik" required><br><br>
+
+    <label for="depan">Foto Depan:</label>
+    <input type="file" id="depan" accept="image/*" required><br>
+    <label for="belakang">Foto Belakang:</label>
+    <input type="file" id="belakang" accept="image/*" required><br>
+    <label for="kiri">Foto Kiri:</label>
+    <input type="file" id="kiri" accept="image/*" required><br>
+    <label for="kanan">Foto Kanan:</label>
+    <input type="file" id="kanan" accept="image/*" required><br>
+    <label for="dashboard">Foto Dashboard:</label>
+    <input type="file" id="dashboard" accept="image/*" required><br>
+    <label for="mesinFoto">Foto Mesin:</label>
+    <input type="file" id="mesinFoto" accept="image/*" required><br><br>
+    <button type="submit">tambah keranjang</button>
+  </form>
+
+  <h2 id="total-biaya"></h2>
+
+ <button type="button" id="btnCheckout">Checkout</button>
+ <button type="button" id="btnBack">Kembali</button>
+
+
+<script src="mobil.js"></script>
+  </body>
+  </html>

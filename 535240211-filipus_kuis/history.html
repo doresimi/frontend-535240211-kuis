@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Histori Pembelian</title>
+  <style>
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f4f7f6;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    
+    .header {
+      background-color: #1a237e; 
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .header h2 {
+      margin: 0;
+      font-size: 2.5em;
+      font-weight: 700;
+    }
+
+    #history-list {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #history-list > div {
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+
+    #history-list > div:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    h2 {
+      color: #1a237e;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      color: #333;
+      margin: 0 0 10px 0;
+      font-weight: 700;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 5px;
+    }
+
+    pre {
+      margin: 0;
+      white-space: pre-wrap;
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    b {
+      display: block;
+      margin-top: 10px;
+    }
+
+    #history-list p {
+      text-align: center;
+      color: #888;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h2>Histori Pembelian</h2>
+  </div>
+  <div id="history-list"></div>
+
+  <script>
+    const history = JSON.parse(sessionStorage.getItem("history")) || [];
+    const container = document.getElementById("history-list");
+
+    if (history.length === 0) {
+      container.innerHTML = "<p>Belum ada pembelian.</p>";
+    } else {
+      history.forEach((trx, i) => {
+        const div = document.createElement("div");
+        div.innerHTML = `<h3>Transaksi ${i + 1} - ${trx.tanggal}</h3>`;
+        trx.items.forEach((item, j) => {
+          div.innerHTML += `<b>${j + 1}. ${item.jenis}</b><pre>${item.detail}</pre>`;
+        });
+        container.appendChild(div);
+      });
+    }
+  </script>
+</body>
+</html>

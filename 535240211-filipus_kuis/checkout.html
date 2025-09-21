@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout</title>
+  <style>
+  body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f4f7f6;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+  
+    .header {
+      background-color: #1a237e; 
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .header h2 {
+      margin: 0;
+      font-size: 2.5em;
+      font-weight: 700;
+    }
+
+ 
+    #checkout-list, #confirm {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #checkout-list {
+      border-top: 2px solid #ddd;
+      padding-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    #checkout-list div {
+      border-bottom: 1px solid #eee;
+      padding: 15px 0;
+    }
+
+    #checkout-list h4 {
+      color: #333;
+      margin: 0 0 5px 0;
+      font-weight: 700;
+    }
+
+    #checkout-list pre {
+      margin: 0;
+      white-space: pre-wrap;
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    #confirm {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: #4CAF50; 
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #confirm:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h2>Checkout</h2>
+  </div>
+  
+  <div id="checkout-list"></div>
+  <button id="confirm">Bayar</button>
+  
+  <script>
+    const checkoutData = JSON.parse(sessionStorage.getItem("checkoutTemp")) || [];
+    const container = document.getElementById("checkout-list");
+
+    if (checkoutData.length === 0) {
+      container.innerHTML = "<p>Tidak ada item di checkout.</p>";
+    } else {
+      checkoutData.forEach((item, i) => {
+        const div = document.createElement("div");
+        div.innerHTML = `<h4>${i+1}. ${item.jenis}</h4>
+                        <pre>${item.detail}</pre>`;
+        container.appendChild(div);
+      });
+    }
+
+    document.getElementById("confirm").addEventListener("click", () => {
+      const history = JSON.parse(sessionStorage.getItem("history")) || [];
+      history.push({
+        tanggal: 2025,
+        items: checkoutData
+      });
+      sessionStorage.setItem("history", JSON.stringify(history));
+      sessionStorage.removeItem("checkoutTemp");
+      window.location.href = "history.html";
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href= "kesehatan.css">
+  <title>Asuransi Kesehatan</title>
+</head>
+<body>
+    <header class="header"></header>
+  <h2>Formulir Asuransi Kesehatan</h2>
+
+  <div class="ketentuan">
+  <h2>Ketentuan Perhitungan Premi Kesehatan</h2>
+  <ul>
+  <li>Premi dasar: <strong>Rp2.000.000</strong></li>
+  <li>Usia ≤ <strong>20 tahun</strong>: tambahan premi = <strong>10%</strong> dari premi dasar</li>
+  <li>Usia ≤ <strong>35 tahun</strong>: tambahan premi = <strong>20%</strong> dari premi dasar</li>
+  <li>Usia ≤ <strong>50 tahun</strong>: tambahan premi = <strong>25%</strong> dari premi dasar</li>
+  <li>Usia > <strong>50 tahun</strong>: tambahan premi = <strong>30%</strong> dari premi dasar</li>
+  <li>Faktor kesehatan:
+    <ul>
+      <li>Merokok: +50% dari premi dasar</li>
+      <li>Hipertensi: +40% dari premi dasar</li>
+      <li>Diabetes: +50% dari premi dasar</li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+
+
+  <form id="formKesehatan">
+    <input type="text" id="nama" placeholder="Nama Lengkap (KTP)" required><br>
+    <input type="number" id="tahun" placeholder="Tahun Lahir" required><br>
+    <input type="text" id="pekerjaan" placeholder="Pekerjaan" required><br>
+
+    <label>Merokok:</label>
+    <select id="merokok">
+      <option value="1">Ya</option>
+      <option value="0">Tidak</option>
+    </select><br>
+
+    <label>Riwayat Hipertensi:</label>
+    <select id="hipertensi">
+      <option value="1">Ya</option>
+      <option value="0">Tidak</option>
+    </select><br>
+
+    <label>Diabetes:</label>
+    <select id="diabetes">
+      <option value="1">Ya</option>
+      <option value="0">Tidak</option>
+    </select><br>
+
+    <button type="submit">Tambah keranjang</button>
+  </form>
+    <button type="button" id="btnCheckout">Checkout</button>
+    <button type="button" id="btnBack">Kembali</button>
+
+  <h3 id="hasil-premi"></h3>
+
+<script src="kesehatan.js"></script>
+</body>
+</html>

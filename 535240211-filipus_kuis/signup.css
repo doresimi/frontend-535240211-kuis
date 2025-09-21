@@ -1,0 +1,107 @@
+.header {
+  display: flex;  
+  align-items: center;     
+  background-color: #37bae2 ;
+  height: 120px; 
+  padding-right: 500px;
+}
+
+.header img {
+  width: 250px; 
+  height: 250px; 
+  margin-right: 20px; 
+}
+
+.header h2{
+font-size: 40px;
+color: #fdfdff;
+white-space: nowrap; 
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: calc(100vh - 120px); 
+  padding-top: 20px;
+}
+
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: calc(100vh - 120px); 
+  padding-top: 20px;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 90%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('images/src/contract.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh; 
+  font-family: Arial, sans-serif;
+}
+
+.signup-form input,
+.signup-form button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+
+.signup-form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.signup-form button:hover {
+  background-color: #0056b3;
+}
+
+.login-link {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.login-link a {
+  text-decoration: none;
+  color: rgb(1, 8, 10);
+  font-weight: 100;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.login-link a:hover {
+  color: #258cec;
+}
+
+

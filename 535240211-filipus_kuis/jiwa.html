@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="jiwa.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <h1>CERMATI.com</h1>
+    </div>
+    <div class="ketentuan">
+  <h2>Ketentuan Tarif Premi Asuransi Jiwa</h2>
+  <ul>
+    <li>Umur ≤ <strong>30 tahun</strong>: Tarif premi = <strong>0.2%</strong> dari besar pertanggungan</li>
+    <li>Umur ≤ <strong>50 tahun</strong>: Tarif premi = <strong>0.4%</strong> dari besar pertanggungan</li>
+    <li>Umur > <strong>50 tahun</strong>: Tarif premi = <strong>1%</strong> dari besar pertanggungan</li>
+  </ul>
+</div>
+    <form id="DataJiwa" class="inputJiwa">
+        <input type="text" id="nama" placeholder="nama-lengkap(KTP)">
+        <input type="text" id="tanggal" placeholder="tahun-lahir">
+        <label for="tanggungan">Besar Pertanggungan:</label>
+         <select id="tanggungan" required>
+    <option value="">-- Pilih pertanggungan --</option>
+    <option value="1000000000">Rp1.000.000.000</option>
+    <option value="2000000000">Rp2.000.000.000</option>
+    <option value="3500000000">Rp3.500.000.000</option>
+    <option value="5000000000">Rp5.000.000.000</option>
+    <option value="10000000000">Rp10.000.000.000</option>
+  </select>
+        <button type="submit">tambah keranjang</button>
+    </form>
+    <h3 id="hasil-premi"></h3>
+    <button type="button" id="btnCheckout">Checkout</button>
+    <button type="button" id="btnBack">Kembali</button>
+
+    <script src="jiwa.js"></script>
+</body>
+</html>
